@@ -10,12 +10,11 @@ import { StarshipDetails } from '../sw-components';
 
 import './app.css';
 
-import { BrowserRouter as Router, Route, Routes, NavLink, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { PeoplePage,
         PlanetsPage,
         StarshipsPage } from '../pages';
-import { StarshipList } from '../sw-components'
 
 export default class App extends Component {
 

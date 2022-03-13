@@ -1,15 +1,14 @@
 import React from 'react';
 import { StarshipList } from '../sw-components';
+import { useNavigate } from 'react-router-dom';
 
 const StarshipsPage = (props) => {
-  console.log(props);
     return (
       <div>
         <StarshipList 
-         onItemSelected={(itemId) => {}} />
+         onItemSelected={useNavigate()} />
       </div>
     );
 };
 
-// export default withRouter(StarshipsPage);
 export default StarshipsPage;
