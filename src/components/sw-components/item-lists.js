@@ -44,6 +44,7 @@ const StarshipList = compose (
                       withData,
                       withChildFunction(renderModelAndName)
                       )(ItemList);
+              
 
 export {
   PersonList,

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './item-list.css';
+import { NavLink } from 'react-router-dom';
 
 const ItemList = (props) => {
 
@@ -12,9 +13,11 @@ const ItemList = (props) => {
 
     return (
       <li className="list-group-item"
-          key={id}
-          onClick={() => onItemSelected(id)}>
-        {label}
+          key={id}>
+          <NavLink to={`/starships/${id}`}>{label}</NavLink>
+    {/* onClick={() => onItemSelected(id)}import { NavLink } from 'react-router-dom'; */}
+
+        {/* {label} */}
       </li>
     );
   });

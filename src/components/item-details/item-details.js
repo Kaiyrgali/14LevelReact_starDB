@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { useParams } from 'react-router-dom';
 import ErrorButton from '../error-button/error-button';
 import SwapiService from '../../services/swapi-service';
-
+// import { useParams } from 'react-router-dom';
 import './item-details.css';
 
 const Record = ({ item, field, label }) => {
@@ -41,10 +41,9 @@ export default class ItemDetails extends Component {
   }
 
   updateItem() {
+    
     const { itemId, getData, getImageUrl } = this.props;
-    console.log (itemId);
-    // console.log (getData);
-    // console.log (getImageUrl);
+
     if (!itemId) {
       return;
     }

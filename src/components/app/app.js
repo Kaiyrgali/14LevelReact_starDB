@@ -14,7 +14,17 @@ import { BrowserRouter as Router, Route, Routes, NavLink, useParams } from 'reac
 
 import { PeoplePage,
         PlanetsPage,
-        StarshipsPage } from '../pages'; 
+        StarshipsPage } from '../pages';
+import { StarshipList } from '../sw-components'
+
+  const useId = () => {
+  // params = useParams()
+  const params = useParams();
+  const paramsId = params.id;
+  console.log ('useId = ', paramsId)
+  return paramsId;
+  }
+  
 
 export default class App extends Component {
 
@@ -32,11 +42,12 @@ export default class App extends Component {
   });
 }
 
+  updateUrl = (newUrl) => {
+    this.setState ( {page: newUrl} )
+  }
   
   render() {
-    
-  // const p = useP()
-  //   console.log(useP);
+    // const newId = useId();
     return (
       <ErrorBoundry>
         <SwapiServiceProvider value = {this.state.swapiService}>
@@ -49,9 +60,9 @@ export default class App extends Component {
               <Route path = '*' element = {<h2>Page not ready</h2>} />
               <Route path = 'people' element = {<PeoplePage />} />
               <Route path = 'planets' element = {<PlanetsPage />} />
-              <Route path='starships' element = {<StarshipsPage />} >
-                <Route path=':id' element = {<StarshipDetails  />} />
-              </Route>
+              <Route path='starships' element = {<StarshipsPage updateUrl={this.updateUrl} />} />
+              <Route path='starships/:id' element = {<StarshipDetails itemId={3}/>} />
+              {/* </Route> */}
             </Routes>
           </div>
           </Router>
@@ -59,12 +70,4 @@ export default class App extends Component {
       </ErrorBoundry>
     );
   }
-}
-
-const useP = () => {
-  const params = useParams();
-  // console.log (params);
-  const prodId = params.id;
-  console.log(prodId);
-  return prodId;
 }
