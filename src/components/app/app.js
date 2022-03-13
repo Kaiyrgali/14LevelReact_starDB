@@ -17,15 +17,6 @@ import { PeoplePage,
         StarshipsPage } from '../pages';
 import { StarshipList } from '../sw-components'
 
-  const useId = () => {
-  // params = useParams()
-  const params = useParams();
-  const paramsId = params.id;
-  console.log ('useId = ', paramsId)
-  return paramsId;
-  }
-  
-
 export default class App extends Component {
 
   state = {
@@ -47,7 +38,6 @@ export default class App extends Component {
   }
   
   render() {
-    // const newId = useId();
     return (
       <ErrorBoundry>
         <SwapiServiceProvider value = {this.state.swapiService}>
@@ -60,8 +50,8 @@ export default class App extends Component {
               <Route path = '*' element = {<h2>Page not ready</h2>} />
               <Route path = 'people' element = {<PeoplePage />} />
               <Route path = 'planets' element = {<PlanetsPage />} />
-              <Route path='starships' element = {<StarshipsPage updateUrl={this.updateUrl} />} />
-              <Route path='starships/:id' element = {<StarshipDetails itemId={3}/>} />
+              <Route path='starships' element = {<StarshipsPage  />} />
+              <Route path='starships/:id' element = {<StarshipDetails />} />
               {/* </Route> */}
             </Routes>
           </div>
