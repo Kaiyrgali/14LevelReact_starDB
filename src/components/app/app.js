@@ -47,7 +47,7 @@ export default class App extends Component {
             <Routes>
               <Route path = '/' element = {<h2>Welcome to StartDB</h2>} />
               <Route path = '*' element = {<h2>Page not ready</h2>} />
-              <Route path = 'people' element = {<PeoplePage />} />
+              <Route path = 'people/:id?' element = {<PeoplePage />} />
               <Route path = 'planets' element = {<PlanetsPage />} />
               <Route path='starships' element = {<StarshipsPage  />} />
               <Route path='starships/:id' element = {<StarshipDetails />} />
