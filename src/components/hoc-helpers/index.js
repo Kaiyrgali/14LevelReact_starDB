@@ -7,5 +7,5 @@ export {
   withData,
   withSwapiService,
   compose,
-  withChildFunction
+  withChildFunction,
 };

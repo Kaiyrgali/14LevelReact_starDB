@@ -9,5 +9,5 @@ export {
   PlanetsPage,
   StarshipsPage,
   LoginPage,
-  SecretPage
+  SecretPage,
 };

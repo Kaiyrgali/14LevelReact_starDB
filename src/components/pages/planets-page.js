@@ -3,9 +3,8 @@ import { PlanetDetails, PlanetList } from '../sw-components';
 import Row from '../row';
 
 export default class PlanetsPage extends Component {
-
   state = {
-    selectedItem: null
+    selectedItem: null,
   };
 
   onItemSelected = (selectedItem) => {
@@ -18,7 +17,8 @@ export default class PlanetsPage extends Component {
     return (
       <Row
         left={<PlanetList onItemSelected={this.onItemSelected} />}
-        right={<PlanetDetails itemId={selectedItem} />} />
+        right={<PlanetDetails itemId={selectedItem} />}
+      />
     );
   }
 }
